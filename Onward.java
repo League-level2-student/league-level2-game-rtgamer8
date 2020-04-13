@@ -13,6 +13,10 @@ public static void main(String[] args) {
 	panel.addAncestorListener(this);
 	int score = 0;
 	
+	for (int i = 0; i < 10; i++) {
+		System.out.println("this is running " + i + "amount of times");
+	}
+	
 	
 	
 	
