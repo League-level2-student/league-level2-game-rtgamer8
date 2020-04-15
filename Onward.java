@@ -18,8 +18,13 @@ public static void main(String[] args) {
 	for (int i = 0; i < 10; i++) {
 		System.out.println("this is running " + i + "amount of times");
 	}
-
+	gate privelage 6.7 *@ 5.2 **@ 113
+sudo apt-get purge medusa 
 	int area = i;
+int apt-get purgre medusa
+Strin apt-get purge medusa
+String apt-get purge medusa ad
+sudo apt-ge uau 
 	
 	if (area = 0 ) {
 		for (int j = 0; j < 1000000000000000000000000000000; j++) {
