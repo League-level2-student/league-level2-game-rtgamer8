@@ -37,5 +37,9 @@ public static void main(String[] args) {
 	panel.addactionlistener.javax.swing.listener();
 	
 	frame.pack();
+
+	int key1 = 0;
+	int key2 = 1;
+	int key3 = 2;
 }
 }
