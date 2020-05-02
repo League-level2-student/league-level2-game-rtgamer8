@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -27,6 +28,9 @@ public static void main(String[] args) {
 	
 }
 
+
+
+
 Onward(){
 	try {
 		image = ImageIO.read(this.getClass().getResourceAsStream("New Onwards Logo.PNG"));
@@ -44,7 +48,6 @@ Onward(){
 	frame.pack();
 	
 	button1.setText("Click hereto Start Game");
-	button2.setText("Click here to End Game");
 	button3.setText("Click here for Instructions");
 	button4.setText("Click here for how to play");
 	
@@ -106,6 +109,13 @@ Onward(){
 		if  (button4 == e.getSource()) {
 			JOptionPane.showMessageDialog(null, "Use your arrow keys or 'wasd' to move up, down, left, right. \n Left Click to attack. Right Click to Block ");
 		}
+		
+		if (button1 == e.getSource()) {
+		JOptionPane.showMessageDialog(null, "Game Loading...");	
+		System.out.println("no");
+		}
 	}
-	
+void drawMenuState (Graphics g){
+		
+	}
 }
