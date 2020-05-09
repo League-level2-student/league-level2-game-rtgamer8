@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class Onward implements KeyListener, ActionListener {
+public class Onward implements KeyListener, ActionListener  {
 	public static BufferedImage image;
 	JFrame frame = new JFrame();
 	GamePanel panel;
@@ -27,9 +27,6 @@ public static void main(String[] args) {
 	onward.start();
 	
 }
-
-
-
 
 Onward(){
 	try {
@@ -77,7 +74,10 @@ Onward(){
 	panel.revalidate();
 	frame.repaint();
 	panel.repaint();
-	
+	frame.repaint();
+	frame.revalidate();
+	frame.pack();
+  
 
 }
 	@Override
@@ -112,10 +112,15 @@ Onward(){
 		
 		if (button1 == e.getSource()) {
 		JOptionPane.showMessageDialog(null, "Game Loading...");	
-		System.out.println("no");
+	
+		JOptionPane.showMessageDialog(null, "");
+		
 		}
+		frame.repaint();
+		frame.revalidate();
+		frame.pack();
 	}
 void drawMenuState (Graphics g){
-		
+		g.draw3DRect(0, 10, 10, 20, true);
 	}
 }
