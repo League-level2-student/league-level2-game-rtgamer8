@@ -116,9 +116,10 @@ Onward(){
 		JOptionPane.showMessageDialog(null, "");
 		
 		}
-		frame.repaint();
-		frame.revalidate();
-		frame.pack();
+		
+frame.repaint();
+frame.revalidate();
+frame.pack();
 	}
 void drawMenuState (Graphics g){
 		g.draw3DRect(0, 10, 10, 20, true);
