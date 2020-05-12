@@ -27,6 +27,8 @@ GamePanel(BufferedImage image){
 			drawEndState(g);
 		}
 }
+	
+	
 
 
 
@@ -54,6 +56,7 @@ void drawGameState(Graphics g) {
 void drawEndState(Graphics g) {
 
 }
+
 
 
 
