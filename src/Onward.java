@@ -14,13 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Onward implements KeyListener, ActionListener  {
+	public static final int HEIGHT = 0;
 	public static BufferedImage image;
+	public static int WIDTH;
 	JFrame frame = new JFrame();
 	GamePanel panel;
-	JButton button1 = new JButton();
-	JButton button2 = new JButton();
-	JButton button3 = new JButton();
-	JButton button4 = new JButton();
+
 public static void main(String[] args) {
 	Onward onward = new Onward();
 	
@@ -42,41 +41,27 @@ Onward(){
 	
 
 	
-	frame.pack();
 	
-	button1.setText("Click hereto Start Game");
-	button3.setText("Click here for Instructions");
-	button4.setText("Click here for how to play");
 	
-	frame.pack();
+
+
 	
 	frame.add(panel);
-	panel.add(button1);
-	panel.add(button2);
-	panel.add(button3);
-	panel.add(button4);
-	button1.addActionListener(this);
-    button2.addActionListener(this);
-	button3.addActionListener(this);
-	button4.addActionListener(this);
-	frame.pack();
+	
+
+
 	
 	frame.setVisible(true);
 	frame.addKeyListener(this);
 
-	frame.pack();
+	
 
 	int key1 = 0;
 	int key2 = 1;
 	int key3 = 2;
 	
-	frame.revalidate();
-	panel.revalidate();
-	frame.repaint();
-	panel.repaint();
-	frame.repaint();
-	frame.revalidate();
-	frame.pack();
+frame.pack();
+	
   
 
 }
@@ -102,20 +87,7 @@ Onward(){
 		// TODO Auto-generated method stub
 		// here
 		//button 3 action
-		if (button3 == e.getSource()) {
-			JOptionPane.showMessageDialog(null, "Your goal is to go down into this dark cave, \n collect three keys and find your way back up without dying");
-		}
-		//button 4 action
-		if  (button4 == e.getSource()) {
-			JOptionPane.showMessageDialog(null, "Use your arrow keys or 'wasd' to move up, down, left, right. \n Left Click to attack. Right Click to Block ");
-		}
-		
-		if (button1 == e.getSource()) {
-		JOptionPane.showMessageDialog(null, "Game Loading...");	
 	
-		JOptionPane.showMessageDialog(null, "");
-		
-		}
 		
 frame.repaint();
 frame.revalidate();
