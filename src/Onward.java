@@ -18,7 +18,7 @@ public class Onward implements KeyListener, ActionListener  {
 	public static BufferedImage image;
 	public static int WIDTH;
 	JFrame frame = new JFrame();
-	GamePanel panel;
+	GameOnwardPanel panel;
 
 public static void main(String[] args) {
 	Onward onward = new Onward();
@@ -34,7 +34,7 @@ Onward(){
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	panel = new GamePanel( image);
+	panel = new GameOnwardPanel(image);
 	frame.setPreferredSize(new Dimension(300,600) );
 }
 	public void start() {
