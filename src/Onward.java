@@ -27,6 +27,7 @@ public static void main(String[] args) {
 	
 }
 
+
 Onward(){
 	try {
 		image = ImageIO.read(this.getClass().getResourceAsStream("New Onwards Logo.PNG"));
