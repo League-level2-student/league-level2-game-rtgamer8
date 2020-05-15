@@ -38,24 +38,15 @@ Onward(){
 	frame.setPreferredSize(new Dimension(300,600) );
 }
 	public void start() {
-	
-
-	
-	
-	
-
 
 	
 	frame.add(panel);
 	
-
-
 	
 	frame.setVisible(true);
 	frame.addKeyListener(this);
 
 	
-
 	int key1 = 0;
 	int key2 = 1;
 	int key3 = 2;
@@ -94,6 +85,7 @@ frame.revalidate();
 frame.pack();
 	}
 void drawMenuState (Graphics g){
-		g.draw3DRect(0, 10, 10, 20, true);
+		
+		
 	}
 }

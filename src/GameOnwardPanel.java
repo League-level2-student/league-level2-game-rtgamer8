@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -13,21 +14,22 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	JButton button2 = new JButton();
 	JButton button3 = new JButton();
 	JButton button4 = new JButton();
+	
 	final int MENU =0;
 	final int GAME=1;
 	final int END=2;
-	public BufferedImage background;
+	public BufferedImage gameBackground;
+	public BufferedImage menuBackground;
 	int currentState = MENU;
-	
 
 	public GameOnwardPanel(BufferedImage image){
-		background = image;
+    menuBackground = image;
 		add(button1);
 		add(button2);
 		add(button3);
 		add(button4);
 		
-		
+		button2.setText("return");
 		button1.setText("Click hereto Start Game");
 		button3.setText("Click here for Instructions");
 		button4.setText("Click here for how to play");
@@ -39,6 +41,7 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 		button4.addActionListener(this);
 		
 		repaint();
+		
 		
 	
 	}
@@ -60,29 +63,50 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	}
 	
 	void drawMenuState (Graphics g){
-		
+		g.drawImage(menuBackground, 0, 0, 300, 600, null);
 	}
 	
 	void drawGameState (Graphics g){
-		g.notify();
+		g.drawImage(gameBackground, 0, 0, 300, 600, null );
 	}
 void drawEndState (Graphics g){
 		
 	}
+
+void removeButtons(){
+	remove(button1);
+	
+	remove(button3);
+	remove(button4);
+}
+
+
 @Override
 public void paintComponent(Graphics g) {
 	
-	g.drawImage(background, 0, 0, 300, 600, null );
+	
 	if(currentState == MENU) {
 		drawMenuState(g);
 	}else if(currentState == GAME) {
 		drawGameState(g);
+		
 	}else if(currentState == END) {
 		drawEndState(g);
 	}
 	
 }
 
+void loadImage() {
+   
+        try {
+            gameBackground = ImageIO.read(this.getClass().getResourceAsStream("onward wallpaper.jpg"));
+	  
+        } catch (Exception e) {
+            
+        
+        }
+    
+}
 
 @Override
 public void actionPerformed(ActionEvent e) {
@@ -97,9 +121,10 @@ public void actionPerformed(ActionEvent e) {
 	}
 	
 	if (button1 == e.getSource()) {
-	JOptionPane.showMessageDialog(null, "Game Loading...");	
+	// JOptionPane.showMessageDialog(null, "Game Loading...");	
 	currentState = GAME;
-	
+	removeButtons();
+	loadImage();
 	repaint();
 	
 	
