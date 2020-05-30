@@ -21,7 +21,7 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	public BufferedImage gameBackground;
 	public BufferedImage menuBackground;
 	int currentState = MENU;
-
+ 
 	public GameOnwardPanel(BufferedImage image){
     menuBackground = image;
 		add(button1);
@@ -42,7 +42,6 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 		
 		repaint();
 		
-		
 	
 	}
 	
@@ -56,7 +55,7 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	void updateGameState(){
 		
 	}
-// test	
+
 
 	void updateEndState(){
 		
@@ -68,6 +67,15 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	
 	void drawGameState (Graphics g){
 		g.drawImage(gameBackground, 0, 0, 300, 600, null );
+		g.fillRect(0, 100, 200, 50);
+	
+		g.fillRect(230, 200, 50, 50);
+		
+		g.fillRect(200, 265, 50, 50);
+		
+		g.fillRect(180, 330, 50,50);
+		
+		g.fillRect(56, 330, 195,50);
 	}
 void drawEndState (Graphics g){
 		
@@ -80,6 +88,13 @@ void removeButtons(){
 	remove(button4);
 }
 
+
+void addButtons() {
+	add(button1);
+	add(button2);
+	add(button3);
+	add(button4);
+}
 
 @Override
 public void paintComponent(Graphics g) {
@@ -122,14 +137,29 @@ public void actionPerformed(ActionEvent e) {
 	}
 	
 	if (button1 == e.getSource()) {
-	// JOptionPane.showMessageDialog(null, "Game Loading...");	
+		int dialogResult = JOptionPane.showConfirmDialog (null, "Would you like to continue?","Warning",JOptionPane.YES_NO_OPTION);
+		if (dialogResult == JOptionPane.NO_OPTION){
+			currentState=MENU;
+			
+		}
+		else {
+			
+		
 	currentState = GAME;
+	
+		}
 	removeButtons();
 	loadImage();
 	repaint();
 	
-	
-	
+	}
+
+	if (button2 == e.getSource()) {
+		JOptionPane.showMessageDialog(null,"returning to home page..");
+		currentState = MENU;
+		addButtons();
+		repaint();
+		
 	}
 	
 }

@@ -29,17 +29,19 @@ public static void main(String[] args) {
 
 
 Onward(){
+	
 	try {
 		image = ImageIO.read(this.getClass().getResourceAsStream("New Onwards Logo.PNG"));
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	panel = new GameOnwardPanel(image);
+	panel = new GameOnwardPanel(image); 
 	frame.setPreferredSize(new Dimension(300,600) );
 }
 	public void start() {
-
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	
 	frame.add(panel);
 	
