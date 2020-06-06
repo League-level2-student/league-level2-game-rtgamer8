@@ -29,7 +29,7 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 		add(button3);
 		add(button4);
 		
-		button2.setText("return");
+		button2.setText("EXIT");
 		button1.setText("Click hereto Start Game");
 		button3.setText("Click here for Instructions");
 		button4.setText("Click here for how to play");
@@ -63,6 +63,7 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 	
 	void drawMenuState (Graphics g){
 		g.drawImage(menuBackground, 0, 0, 300, 600, null);
+		
 	}
 	
 	void drawGameState (Graphics g){
@@ -76,6 +77,8 @@ public class GameOnwardPanel extends JPanel implements ActionListener {
 		g.fillRect(180, 330, 50,50);
 		
 		g.fillRect(56, 330, 195,50);
+		g.fillRect(56, 330, 201,50);
+
 	}
 void drawEndState (Graphics g){
 		
@@ -140,6 +143,7 @@ public void actionPerformed(ActionEvent e) {
 		int dialogResult = JOptionPane.showConfirmDialog (null, "Would you like to continue?","Warning",JOptionPane.YES_NO_OPTION);
 		if (dialogResult == JOptionPane.NO_OPTION){
 			currentState=MENU;
+			addButtons();
 			
 		}
 		else {
